@@ -1,9 +1,22 @@
-<app-nav-bar></app-nav-bar>
+<ion-header [translucent]="true">
+  <app-navbar titulo= "No No Noticias"></app-navbar>
+</ion-header>
 
-<ion-grid>
-  <ion-row>
-    <ion-col size-md="4" size-lg="4" *ngFor="let news of newsList">
-      <app-news-card [title]="news.title" [description]="news.description" [imageUrl]="news.imageUrl"></app-news-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+<ion-content [fullscreen]="true">
+  
+  
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size-lg="4" size-md="6" size-sm="12" *ngFor= "let not of noticias">
+        <app-card 
+            imagen={{not.imagen}}
+            titulo= {{not.titulo}}
+            subtitulo={{not.subtitulo}}
+            descripcion={{not.descripcion}}
+        ></app-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
+
